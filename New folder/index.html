@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Kesehatan</title>
+    
+</head>
+<body>
+    <h1>Data Pasien</h1>
+    <form action="/apk.py" method="post">
+        <input type="text" name="name" placeholder="Nama Pasien">
+        <textarea name="medical_record" placeholder="Rekam Medis"></textarea>
+        <input type="submit" value="Tambah Pasien">
+    </form>
+    
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.name }} - {{ patient.medical_record }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
